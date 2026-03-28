@@ -1,0 +1,107 @@
+# =========================
+# 🔐 Environment Variables
+# =========================
+.env
+.env.*
+*.env
+
+# =========================
+# 🐍 Python / FastAPI
+# =========================
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+venv/
+.env/
+.venv/
+ENV/
+env/
+
+# Python distribution
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# FastAPI / Uvicorn logs
+*.log
+
+# Pytest
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Mypy / Ruff / Pyright
+.mypy_cache/
+.ruff_cache/
+.pyre/
+
+# =========================
+# ⚛️ React / Node.js
+# =========================
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Build output
+dist/
+build/
+
+# Next.js / Vite
+.next/
+.out/
+.vite/
+
+# Coverage
+coverage/
+
+# =========================
+# 🧠 IDE / Editor files
+# =========================
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# =========================
+# 🖥️ OS Files
+# =========================
+.DS_Store
+Thumbs.db
+
+# =========================
+# 🐳 Docker (optional)
+# =========================
+docker-compose.override.yml
+
+# =========================
+# 📦 Misc
+# =========================
+*.sqlite3
+*.db
+
+# Static / media (optional - uncomment if needed)
+# static/
+# media/
+
+# =========================
+# 🔒 Secrets
+# =========================
+*.pem
+*.key
+*.crt
