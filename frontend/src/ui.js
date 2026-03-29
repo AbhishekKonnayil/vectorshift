@@ -10,6 +10,13 @@ import { InputNode } from './nodes/inputNode';
 import { LLMNode } from './nodes/llmNode';
 import { OutputNode } from './nodes/outputNode';
 import { TextNode } from './nodes/textNode';
+import { MathsNode } from './nodes/mathsNode';
+import { PhysicsNode } from './nodes/physicsNode';
+import { TranslateNode } from './nodes/translateNode';
+import { DatabaseNode } from './nodes/databaseNode';
+import { EmailNode } from './nodes/emailNode';
+import { PythonNode } from './nodes/pythonNode';
+import { ApiNode } from './nodes/apiNode';
 
 import 'reactflow/dist/style.css';
 
@@ -20,6 +27,13 @@ const nodeTypes = {
   llm: LLMNode,
   customOutput: OutputNode,
   text: TextNode,
+  maths: MathsNode,
+  physics: PhysicsNode,
+  translate: TranslateNode,
+  database: DatabaseNode,
+  email: EmailNode,
+  python: PythonNode,
+  api: ApiNode,
 };
 
 const selector = (state) => ({
@@ -90,7 +104,7 @@ export const PipelineUI = () => {
 
     return (
         <>
-        <div ref={reactFlowWrapper} style={{width: '100wv', height: '70vh'}}>
+        <div ref={reactFlowWrapper} style={{width: '100vw', height: '70vh'}}>
             <ReactFlow
                 nodes={nodes}
                 edges={edges}
@@ -105,9 +119,14 @@ export const PipelineUI = () => {
                 snapGrid={[gridSize, gridSize]}
                 connectionLineType='smoothstep'
             >
-                <Background color="#aaa" gap={gridSize} />
-                <Controls />
-                <MiniMap />
+            <Background color="#c7d2fe" gap={gridSize} size={1} variant="dots" />
+            <Controls className="bg-white border-violet-100 shadow-lg rounded-xl overflow-hidden" />
+            <MiniMap
+              nodeStrokeColor="#8b5cf6"
+              nodeColor="#f5f3ff"
+              maskColor="rgba(255, 255, 255, 0.6)"
+              className="rounded-xl border border-violet-100 shadow-lg overflow-hidden"
+            />
             </ReactFlow>
         </div>
         </>

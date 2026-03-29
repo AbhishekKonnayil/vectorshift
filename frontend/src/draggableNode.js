@@ -1,33 +1,41 @@
-// draggableNode.js
+import {
+  Plus
+} from 'lucide-react';
+
+const NODE_ICONS = {
+  customInput: Plus,
+  llm: Plus,
+  customOutput: Plus,
+  text: Plus,
+  maths: Plus,
+  physics: Plus,
+  translate: Plus,
+  database: Plus,
+  email: Plus,
+  python: Plus,
+  api: Plus,
+};
 
 export const DraggableNode = ({ type, label }) => {
-    const onDragStart = (event, nodeType) => {
-      const appData = { nodeType }
-      event.target.style.cursor = 'grabbing';
-      event.dataTransfer.setData('application/reactflow', JSON.stringify(appData));
-      event.dataTransfer.effectAllowed = 'move';
-    };
-  
-    return (
-      <div
-        className={type}
-        onDragStart={(event) => onDragStart(event, type)}
-        onDragEnd={(event) => (event.target.style.cursor = 'grab')}
-        style={{ 
-          cursor: 'grab', 
-          minWidth: '80px', 
-          height: '60px',
-          display: 'flex', 
-          alignItems: 'center', 
-          borderRadius: '8px',
-          backgroundColor: '#1C2536',
-          justifyContent: 'center', 
-          flexDirection: 'column'
-        }} 
-        draggable
-      >
-          <span style={{ color: '#fff' }}>{label}</span>
-      </div>
-    );
+  const Icon = NODE_ICONS[type] || Plus;
+
+  const onDragStart = (event, nodeType) => {
+    const appData = { nodeType }
+    event.dataTransfer.setData('application/reactflow', JSON.stringify(appData));
+    event.dataTransfer.effectAllowed = 'move';
   };
+
+  return (
+    <div
+      className={`${type} group flex cursor-grab flex-col items-center justify-center gap-2 rounded-xl border border-violet-100 bg-white px-4 py-3 transition-all duration-200 hover:border-violet-300 hover:shadow-md active:cursor-grabbing active:scale-95`}
+      onDragStart={(event) => onDragStart(event, type)}
+      draggable
+    >
+      <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-violet-50 text-violet-600 transition-colors group-hover:bg-violet-600 group-hover:text-white">
+        <Icon className="h-5 w-5" />
+      </div>
+      <span className="text-[10px] font-bold uppercase tracking-widest text-slate-500 group-hover:text-violet-700">{label}</span>
+    </div>
+  );
+};
   

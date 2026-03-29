@@ -1,6 +1,17 @@
 import { Position } from 'reactflow';
-import { BaseNode } from './components/baseNode';
+import { createNode } from './components/nodeFactory';
 import { useStore } from '../store';
+
+const GenericOutputNode = createNode({
+  title: 'Output',
+  handles: [
+    {
+      type: 'target',
+      position: Position.Left,
+      id: 'value',
+    },
+  ],
+});
 
 export const OutputNode = ({ id, data }) => {
   const updateNodeField = useStore((state) => state.updateNodeField);
@@ -9,38 +20,24 @@ export const OutputNode = ({ id, data }) => {
   const outputType = data?.outputType || 'Text';
 
   return (
-    <BaseNode
-      id={id}
-      title="Output"
-      handles={[
-        {
-          type: 'target',
-          position: Position.Left,
-          id: `${id}-value`,
-        },
-      ]}
-    >
-      {/* Name Input */}
-      <input
-        value={outputName}
-        onChange={(e) =>
-          updateNodeField(id, 'outputName', e.target.value)
-        }
-        placeholder="Output name"
-        className="w-full rounded bg-violet-100 px-2 py-1 outline-none focus:ring-2 focus:ring-violet-200"
-      />
+    <GenericOutputNode id={id} data={data}>
+      <div className="flex flex-col gap-2">
+        <input
+          value={outputName}
+          onChange={(e) => updateNodeField(id, 'outputName', e.target.value)}
+          placeholder="Output name"
+          className="w-full rounded bg-violet-50 border border-violet-100 px-2 py-1 text-xs focus:outline-none focus:ring-1 focus:ring-violet-300"
+        />
 
-      {/* Type Select */}
-      <select
-        value={outputType}
-        onChange={(e) =>
-          updateNodeField(id, 'outputType', e.target.value)
-        }
-        className="w-full rounded border border-violet-200 px-2 py-1 outline-none focus:ring-2 focus:ring-violet-200"
-      >
-        <option>Text</option>
-        <option>File</option>
-      </select>
-    </BaseNode>
+        <select
+          value={outputType}
+          onChange={(e) => updateNodeField(id, 'outputType', e.target.value)}
+          className="w-full rounded border border-slate-200 bg-white px-2 py-1 text-xs focus:outline-none focus:ring-1 focus:ring-violet-300"
+        >
+          <option>Text</option>
+          <option>File</option>
+        </select>
+      </div>
+    </GenericOutputNode>
   );
 };

@@ -86,13 +86,26 @@ Is DAG: ${responseBody.is_dag}
   };
 
   return (
-    <div className="mt-4 flex justify-center">
+    <div className="mb-4 mt-2">
       <button
         type="button"
         onClick={handleSubmit}
-        className="rounded bg-violet-500 px-4 py-2 text-white hover:bg-violet-600"
+        className="group relative flex h-14 items-center justify-center overflow-hidden rounded-2xl bg-slate-950 px-8 py-3 font-bold text-white shadow-2xl transition-all duration-300 hover:scale-105 active:scale-95"
       >
-        Submit Pipeline
+        <div className="absolute inset-0 bg-gradient-to-r from-violet-600 to-indigo-600 transition-opacity duration-300 group-hover:opacity-80"></div>
+        <div className="absolute bottom-0 left-0 h-1 w-full bg-gradient-to-r from-transparent via-white/30 to-transparent transition-transform duration-500 group-hover:translate-x-full"></div>
+        
+        <span className="relative flex items-center gap-2">
+          <span>Submit Pipeline</span>
+          <svg 
+            className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" 
+            fill="none" 
+            viewBox="0 0 24 24" 
+            stroke="currentColor"
+          >
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+          </svg>
+        </span>
       </button>
     </div>
   );
