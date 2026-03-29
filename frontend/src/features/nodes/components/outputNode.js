@@ -1,6 +1,6 @@
 import { Position } from 'reactflow';
-import { createNode } from './components/nodeFactory';
-import { useStore } from '../store';
+import { createNode } from './nodeFactory';
+import { useStore } from '../../pipeline/store/useStore';
 
 const GenericOutputNode = createNode({
   title: 'Output',

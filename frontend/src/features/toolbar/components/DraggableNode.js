@@ -1,19 +1,29 @@
 import {
-  Plus
+  ArrowRight,
+  Cpu,
+  ArrowLeft,
+  Type,
+  Plus,
+  Zap,
+  Globe,
+  Database,
+  Mail,
+  Code,
+  Share2
 } from 'lucide-react';
 
 const NODE_ICONS = {
-  customInput: Plus,
-  llm: Plus,
-  customOutput: Plus,
-  text: Plus,
+  customInput: ArrowRight,
+  llm: Cpu,
+  customOutput: ArrowLeft,
+  text: Type,
   maths: Plus,
-  physics: Plus,
-  translate: Plus,
-  database: Plus,
-  email: Plus,
-  python: Plus,
-  api: Plus,
+  physics: Zap,
+  translate: Globe,
+  database: Database,
+  email: Mail,
+  python: Code,
+  api: Share2,
 };
 
 export const DraggableNode = ({ type, label }) => {

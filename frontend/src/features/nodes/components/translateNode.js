@@ -1,5 +1,5 @@
 import { Position } from 'reactflow';
-import { createNode } from './components/nodeFactory';
+import { createNode } from './nodeFactory';
 
 export const TranslateNode = createNode({
   title: 'Translate',

@@ -1,6 +1,6 @@
 import { X } from 'lucide-react';
 import { Handle } from 'reactflow';
-import { useStore } from '../../store';
+import { useStore } from '../../pipeline/store/useStore';
 
 export const BaseNode = ({ id, title, handles = [], children }) => {
     const removeNode = useStore((state) => state.removeNode);

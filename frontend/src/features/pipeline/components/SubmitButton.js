@@ -1,4 +1,4 @@
-import { useStore } from './store';
+import { useStore } from '../store/useStore';
 
 const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || '';
 
@@ -86,7 +86,7 @@ Is DAG: ${responseBody.is_dag}
   };
 
   return (
-    <div className="mb-4 mt-2">
+    <div className="mb-4 mt-4 flex justify-center">
       <button
         type="button"
         onClick={handleSubmit}

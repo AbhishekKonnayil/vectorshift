@@ -4,19 +4,19 @@
 
 import { useState, useRef, useCallback } from 'react';
 import ReactFlow, { Controls, Background, MiniMap } from 'reactflow';
-import { useStore } from './store';
+import { useStore } from '../store/useStore';
 import { shallow } from 'zustand/shallow';
-import { InputNode } from './nodes/inputNode';
-import { LLMNode } from './nodes/llmNode';
-import { OutputNode } from './nodes/outputNode';
-import { TextNode } from './nodes/textNode';
-import { MathsNode } from './nodes/mathsNode';
-import { PhysicsNode } from './nodes/physicsNode';
-import { TranslateNode } from './nodes/translateNode';
-import { DatabaseNode } from './nodes/databaseNode';
-import { EmailNode } from './nodes/emailNode';
-import { PythonNode } from './nodes/pythonNode';
-import { ApiNode } from './nodes/apiNode';
+import { InputNode } from '../../nodes/components/inputNode';
+import { LLMNode } from '../../nodes/components/llmNode';
+import { OutputNode } from '../../nodes/components/outputNode';
+import { TextNode } from '../../nodes/components/textNode';
+import { MathsNode } from '../../nodes/components/mathsNode';
+import { PhysicsNode } from '../../nodes/components/physicsNode';
+import { TranslateNode } from '../../nodes/components/translateNode';
+import { DatabaseNode } from '../../nodes/components/databaseNode';
+import { EmailNode } from '../../nodes/components/emailNode';
+import { PythonNode } from '../../nodes/components/pythonNode';
+import { ApiNode } from '../../nodes/components/apiNode';
 
 import 'reactflow/dist/style.css';
 

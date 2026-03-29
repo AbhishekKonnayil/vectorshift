@@ -1,8 +1,8 @@
 import { useMemo, useState, useEffect, useRef } from 'react';
 import { Position } from 'reactflow';
-import { createNode } from './components/nodeFactory';
-import { extractVariables } from './utils/extractVariables';
-import { useStore } from '../store';
+import { createNode } from './nodeFactory';
+import { extractVariables } from '../utils/extractVariables';
+import { useStore } from '../../pipeline/store/useStore';
 
 const GenericTextNode = createNode({
   title: 'Text',
